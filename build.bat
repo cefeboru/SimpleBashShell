@@ -7,6 +7,7 @@ set compilerflags=/Od /Zi /EHsc
 set linkerflags=/OUT:bin\bash.exe
 cl.exe %compilerflags% main.cpp /link %linkerflags%
 
-REM DELETE THE LINKER GENERATED FILES
-del /S *.ilk
-del /S *.pdb
+set linkerflags=/OUT:bin\ls.exe
+cl.exe %compilerflags% ls\\ls.cpp /link %linkerflags%
+
+cd %mypath:~0,-1%
