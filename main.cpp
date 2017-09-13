@@ -35,7 +35,6 @@ int main() {
 		char cd[] = "cd";
 		output = strstr(comando, cd);
 		if(output){
-			cout << "Will try to change current directory";
 			changeCurrentPath(comando);
 		} else {
 			startProcess(comando, &si, &pi);
