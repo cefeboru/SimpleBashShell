@@ -31,5 +31,5 @@ void chmod(char * filename, int mask) {
 int main(int argsc, char* argsv[]) {
     //argsv[1] == permits
     //argsv[0] == file
-   chmod(argsv[1], argsv[0]);  
+   chmod(argsv[1], strtol(argsv[0], 0, 8));  
 } 
