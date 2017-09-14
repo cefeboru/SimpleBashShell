@@ -15,12 +15,11 @@ string getCurrentPath();
 int main(int argsc, char* argsv[]) {
     string currentPath = getCurrentPath();
     string newDirectory(argsv[1]);
-	/*size_t found = newDirectory.find_first_of(" ");
-	if(found!=string::npos){
-		newDirectory = newDirectory.substr(found + 1, newDirectory.length());
-	}*/
     string outputFolder = currentPath + "\\" + newDirectory;
-    CreateDirectory(outputFolder, NULL);
+	bool created = CreateDirectory(outputFolder.c_str(), NULL);
+	if(!created){
+		printf("Error creating folder: %s \n", outputFolder.c_str() );
+	}
 }
 
 string getCurrentPath(){

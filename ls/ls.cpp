@@ -28,7 +28,7 @@ string getCurrentPath(){
 	{
 		cout << "ERROR";
 	}
-	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
+	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0';
 	string str(cCurrentPath);
 	return str;
 }

@@ -3,7 +3,10 @@
 #include <io.h>  
 #include <stdio.h>  
 #include <stdlib.h>  
-#include <errno.h>  
+#include <errno.h>
+#include <iostream>  
+
+using namespace std;
 
 void chmod(char * filename, int mask) {  
    // Check for failure   
@@ -31,5 +34,6 @@ void chmod(char * filename, int mask) {
 int main(int argsc, char* argsv[]) {
     //argsv[1] == permits
     //argsv[0] == file
+    cout << argsv[0] << endl;
    chmod(argsv[1], strtol(argsv[0], 0, 8));  
 } 
