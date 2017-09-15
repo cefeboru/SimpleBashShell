@@ -20,6 +20,10 @@ REM GENERATE CHMOD.EXE
 set linkerflags=/OUT:bin\chmod.exe
 cl.exe %compilerflags% chmod\\chmod.cpp /link %linkerflags%
 
+REM GENERATE PS.EXE
+set linkerflags=/OUT:bin\ps.exe
+cl.exe %compilerflags% ps\\ps.cpp /link %linkerflags%
+
 REM DELETE THE LINKER GENERATED FILES
 del /S *.ilk
 del /S *.pdb
