@@ -10,6 +10,9 @@ cl.exe %compilerflags% main.cpp /link %linkerflags%
 set linkerflags=/OUT:bin\ls.exe
 cl.exe %compilerflags% ls\\ls.cpp /link %linkerflags%
 
+set linkerflags=/OUT:bin\ps.exe
+cl.exe %compilerflags% ps\\ps.cpp /link %linkerflags%
+
 REM DELETE THE LINKER GENERATED FILES
 del /S *.ilk
 del /S *.pdb
