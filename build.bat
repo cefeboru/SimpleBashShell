@@ -24,6 +24,15 @@ REM GENERATE PS.EXE
 set linkerflags=/OUT:bin\ps.exe
 cl.exe %compilerflags% ps\\ps.cpp /link %linkerflags%
 
+REM GENERATE RM.EXE
+set linkerflags=/OUT:bin\rm.exe
+cl.exe %compilerflags% rm\\rm.cpp /link %linkerflags%
+
+REM GENERATE RMDIR.EXE
+set linkerflags=/OUT:bin\rmdir.exe
+cl.exe %compilerflags% rmdir\\rmdir.cpp /link %linkerflags%
+
 REM DELETE THE LINKER GENERATED FILES
 del /S *.ilk
 del /S *.pdb
+del /S *.obj
