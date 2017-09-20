@@ -32,8 +32,5 @@ void chmod(char * filename, int mask) {
 }  
 
 int main(int argsc, char* argsv[]) {
-    //argsv[1] == permits
-    //argsv[0] == file
-    cout << argsv[0] << endl;
-   chmod(argsv[1], strtol(argsv[0], 0, 8));  
+   chmod(argsv[1], strtol(argsv[2], 0, 8));  
 } 

@@ -30,7 +30,7 @@ int main() {
 
 		if (strcmp(comando,"exit") == 0) break;
 
-		//Search if it is a Change Directory Command
+		//Search if it is a CD Command
 		char *output = NULL;
 		char cd[] = "cd";
 		output = strstr(comando, cd);

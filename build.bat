@@ -32,6 +32,10 @@ REM GENERATE RMDIR.EXE
 set linkerflags=/OUT:bin\rmdir.exe
 cl.exe %compilerflags% rmdir\\rmdir.cpp /link %linkerflags%
 
+REM GENERATE CAT.EXE
+set linkerflags=/OUT:bin\cat.exe
+cl.exe %compilerflags% cat\\cat.cpp /link %linkerflags%
+
 REM DELETE THE LINKER GENERATED FILES
 del /S *.ilk
 del /S *.pdb
