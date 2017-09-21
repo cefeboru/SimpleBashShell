@@ -7,6 +7,38 @@
 using namespace std;
 
 int DeleteDirectory(const std::string &refcstrRootDirectory,
+                    bool bDeleteSubdirectories);
+
+int main(int argsc, char *argsv[])
+{
+    int iRC = 0;
+    string strDirectoryToDelete = "";
+    bool isRecursive = false;
+    for (int i = 1; i < argsc; i++)
+    {
+        size_t found = string(argsv[i]).find_first_of("-R");
+        if (found != string::npos)
+        {
+            isRecursive = true;
+        }
+        else
+        {
+            strDirectoryToDelete = argsv[i];
+        }
+    }
+
+    iRC = DeleteDirectory(strDirectoryToDelete, isRecursive);
+    if (iRC)
+    {
+        if (iRC != -1)
+            std::cout << "Error " << iRC << std::endl;
+        return -1;
+    }
+    cout << "" << endl;
+    return 0;
+}
+
+int DeleteDirectory(const std::string &refcstrRootDirectory,
                     bool bDeleteSubdirectories = false)
 {
     bool bSubdirectory = false;      // Flag, indicating whether
@@ -19,15 +51,16 @@ int DeleteDirectory(const std::string &refcstrRootDirectory,
     strPattern = refcstrRootDirectory + "\\*.*";
     hFile = ::FindFirstFile(strPattern.c_str(), &FileInformation);
     if (hFile != INVALID_HANDLE_VALUE)
-    {   
-        if(!bDeleteSubdirectories){
-            cout << "The folder is not empty" << endl;
-            return -1;
-        }
+    {
         do
         {
             if (FileInformation.cFileName[0] != '.')
             {
+                if (!bDeleteSubdirectories)
+                {
+                    cout << "The folder is not empty" << endl;
+                    return -1;
+                }
                 strFilePath.erase();
                 strFilePath = refcstrRootDirectory + "\\" + FileInformation.cFileName;
 
@@ -79,33 +112,5 @@ int DeleteDirectory(const std::string &refcstrRootDirectory,
         }
     }
 
-    return 0;
-}
-
-int main(int argsc, char *argsv[])
-{
-    int iRC = 0;
-    string strDirectoryToDelete = "";
-    bool isRecursive = false;
-    for (int i = 1; i < argsc; i++)
-    {
-        size_t found = string(argsv[i]).find_first_of("-R");
-        if (found != string::npos)
-        {
-            isRecursive = true;
-        }
-        else
-        {
-            strDirectoryToDelete = argsv[i];
-        }
-    }
-
-    iRC = DeleteDirectory(strDirectoryToDelete, isRecursive);
-    if (iRC)
-    {   
-        if(iRC != -1)
-            std::cout << "Error " << iRC << std::endl;
-        return -1;
-    }
     return 0;
 }

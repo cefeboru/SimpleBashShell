@@ -1,0 +1,11 @@
+
+bash.exe
+cat.exe
+chmod.exe
+ls.exe
+mkdir.exe
+ps.exe
+rm.exe
+rmdir.exe
+test
+ 

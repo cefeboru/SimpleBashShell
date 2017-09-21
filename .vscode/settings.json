@@ -35,6 +35,20 @@
         "xutility": "cpp",
         "*.rh": "cpp",
         "filesystem": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "fstream": "cpp",
+        "xlocmes": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "locale": "cpp",
+        "memory": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp",
+        "xmemory": "cpp"
     }
 }

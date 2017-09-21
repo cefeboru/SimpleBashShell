@@ -7,9 +7,9 @@ int main (int argsc, char * argsv[])
 {
     if(argsv[1]){
         if( remove( argsv[1] ) != 0 )
-            printf("Error Deleting File, '%s' was not found.", argsv[1]);
+            cout << "Error Deleting File," << argsv[1] << " was not found." << endl;
         else
-            puts( "File successfully deleted" );
+            cout << "File successfully deleted" << endl;
     } else {
         cout << "Usage: rm <filename.ext>" << endl;
     }

@@ -18,15 +18,17 @@ int main(int argsc, char* argsv[]) {
     string outputFolder = currentPath + "\\" + newDirectory;
 	bool created = CreateDirectory(outputFolder.c_str(), NULL);
 	if(!created){
-		printf("Error creating folder: %s \n", outputFolder.c_str() );
+		cout << "Error creating folder: " << outputFolder << endl;
 	}
+	cout << "" << endl;
+	return 0;
 }
 
 string getCurrentPath(){
 	char cCurrentPath[FILENAME_MAX];
 	if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
 	{
-		cout << "ERROR";
+		cout << "ERROR" << endl;
 	}
 	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
 	string str(cCurrentPath);
